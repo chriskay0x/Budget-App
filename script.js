@@ -68,8 +68,8 @@ formEl.addEventListener('submit', function(event) {
     transactionEl.insertAdjacentHTML('beforeend', inputDescription);
 
     // Clear Form Inputs
-    inputDescriptionEl.value = " ";
-    inputAmountEl.value =  " ";
+    inputDescriptionEl.value = "";
+    inputAmountEl.value =  "";
 
     // unfocus (blur) form inputs
     // inputDescriptionEl.blur();
