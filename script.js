@@ -37,6 +37,8 @@ transactionEl.addEventListener('click', function(event) {
     // Changes the balance color to red if value is less than 0
     if (updatedBalance < 0) {
         balanceNumberEl.style.color = "red";
+    } else {
+        balnceNumberEl.style.color = "black";
     }
 })
 
@@ -55,7 +57,7 @@ formEl.addEventListener('submit', function(event) {
 
     // Create Listed Budget
     const inputDescription = `
-        <li class="transaction transaction--${amount > 0 ? "income" : "expense"}">
+        <li class="transaction transaction--${amount > 0 ? `+${amount}` : `-${Math.abs(amount)}`}"}">
             <span class="transaction__text">${description}</span>
             <span class="transaction__amount">
             ${amount > 0 ? "+" : " "}
@@ -68,8 +70,8 @@ formEl.addEventListener('submit', function(event) {
     transactionEl.insertAdjacentHTML('beforeend', inputDescription);
 
     // Clear Form Inputs
-    inputDescriptionEl.value = " ";
-    inputAmountEl.value =  " ";
+    inputDescriptionEl.value = "";
+    inputAmountEl.value =  "";
 
     // unfocus (blur) form inputs
     // inputDescriptionEl.blur();
